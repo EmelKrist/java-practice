@@ -1,8 +1,20 @@
+package _8kyu;
+
 import java.util.Scanner;
 
-public class Eight_kyu {
+/*
+Complete the solution so that it reverses all of the words within the string passed in.
+Words are separated by exactly one space and there are no leading or trailing spaces.
+https://www.codewars.com/kata/51c8991dee245d7ddf00000e
+
+Заметка: 2 альтренатива - правильное решение задачи, так как
+последние слова должны становиться первыми(изначально неправильно поняла задачу)
+ */
+public class ReversedWords {
     public static void main(String[] args) {
-        //reverseWordsVersionThree();
+        reversedWords();
+        reverseWordsAlter();
+        reverseWordsAlterTwo();
     }
 
     public static void reversedWords() {
@@ -29,7 +41,7 @@ public class Eight_kyu {
         }
     }
 
-    public static void reverseWordsVersionTwo() {
+    public static void reverseWordsAlter() {
         Scanner scan = new Scanner(System.in);
         String inputString = scan.nextLine();
 
@@ -45,14 +57,7 @@ public class Eight_kyu {
         }
     }
 
-    /*
-    Complete the solution so that it reverses all of the words within the string passed in.
-    Words are separated by exactly one space and there are no leading or trailing spaces.
-
-    Заметка: эта альтренатива - правильное решение задачи, так как
-    последние слова должны становиться первыми(изначально неправильно поняла задачу)
-     */
-    public static void reverseWordsVersionThree() {
+    public static void reverseWordsAlterTwo() {
         Scanner scan = new Scanner(System.in);
         String inputString = scan.nextLine();
 
