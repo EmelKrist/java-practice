@@ -2,6 +2,7 @@ public class Six_kyu {
     public static void main(String[] args) {
         //System.out.println(camelCase("camelCasing"));
         //System.out.println(bouncingBall(3.0, 0.66, 1.5));
+        //System.out.println(isValidWalk(new char[] {'n','s','n','s','n','s','n','s','n','s'});
     }
 
     /*
@@ -51,5 +52,31 @@ public class Six_kyu {
 
     private static int bouncingBallAlter(double h, double bounce, double window){
        return ((h > 0) && (bounce > 0) && (bounce < 1) && (window < h)) ? 2 + bouncingBallAlter(h * bounce, bounce, window): -1;
+    }
+
+    /*
+    https://www.codewars.com/kata/54da539698b8a2ad76000228
+     */
+    public static boolean isValidWalk(char[] walk) {
+        if (walk.length == 10) {
+            int xStep = 0, yStep = 0;
+            for (int i = 0; i < walk.length; i++) {
+                switch (walk[i]) {
+                    case 'n':
+                        yStep++;
+                        break;
+                    case 's':
+                        yStep--;
+                        break;
+                    case 'e':
+                        xStep++;
+                        break;
+                    default:
+                        xStep--;
+                }
+            }
+            return xStep == 0 && yStep == 0;
+        }
+        return false;
     }
 }
