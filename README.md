@@ -1,2 +1,2 @@
-# JavaCodewarsStd
-Repository for solving Codewars challenges
+# java-practice
+Repository for practice in Java 
