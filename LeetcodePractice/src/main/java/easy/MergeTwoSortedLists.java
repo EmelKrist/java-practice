@@ -4,7 +4,7 @@ package easy;
  * https://leetcode.com/problems/merge-two-sorted-lists/description/
  */
 public class MergeTwoSortedLists {
-    public class ListNode {
+    private class ListNode {
         int val;
         ListNode next;
 
