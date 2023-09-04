@@ -23,4 +23,29 @@ public class HappyNumber {
         }
         return n == 1;
     }
+
+    public boolean isHappyAlter(int n) {
+        int slow, fast;
+        slow = fast = n;
+
+        do {
+            slow = findSumOfSquares(slow);
+            fast = findSumOfSquares(findSumOfSquares(fast));
+        } while (slow != fast);
+
+        if (slow == 1) {
+            return true;
+        }
+        return false;
+    }
+
+    private int findSumOfSquares(int num) {
+        int sumOfSquares = 0;
+        while (num > 0) {
+            int digit = num % 10;
+            sumOfSquares += digit * digit;
+            num /= 10;
+        }
+        return sumOfSquares;
+    }
 }
