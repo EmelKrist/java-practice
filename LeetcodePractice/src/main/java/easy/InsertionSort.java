@@ -13,4 +13,18 @@ public class InsertionSort {
         }
         return array;
     }
+
+    public static int[] sortAlter(int[] array) {
+        int n = array.length;
+        for(int i = 1; i < n; i++) {
+            int key = array[i];
+            int j = i - 1;
+            while (j >= 0 && key < array[j]) {
+                array[j] = array[j - 1];
+                j--;
+            }
+            array[j + 1] = key;
+        }
+        return array;
+    }
 }
