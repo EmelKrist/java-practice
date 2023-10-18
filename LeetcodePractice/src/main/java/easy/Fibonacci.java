@@ -1,12 +1,12 @@
 package easy;
 
 public class Fibonacci {
-    public static long fibonacci(int n) {
+    public long fibonacci(int n) {
         if (n <= 1) return n;
         return fibonacci(n - 2) + fibonacci(n - 1);
     }
 
-    public static long fibonacciAlter(int n) {
+    public long fibonacciAlter(int n) {
         if (n <= 1) return n;
         int[] fibonacciNumbers = new int[n + 1];
         fibonacciNumbers[0] = 0; fibonacciNumbers[1] = 1;
@@ -18,5 +18,16 @@ public class Fibonacci {
         }
 
         return fibonacciNumbers[n];
+    }
+
+    public long fibonacciSecondAlter(int n) {
+        if (n <= 1) return n;
+        int preLast = 0, last = 1, fibonacci = 0;
+        for (int i = 2; i <= n; i++) {
+            fibonacci = preLast + last;
+            preLast = last;
+            last = fibonacci;
+        }
+        return fibonacci;
     }
 }
