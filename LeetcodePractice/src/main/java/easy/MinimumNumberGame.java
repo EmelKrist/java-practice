@@ -17,6 +17,27 @@ public class MinimumNumberGame {
         return resultingArray;
     }
 
+    public static int[] numberGameAlter(int[] nums) {
+        int len = nums.length;
+        for (int i = 0; i < len; i++) {
+            for (int j = i; j < len; j++) {
+                if (nums[i] > nums[j]) {
+                    int temp = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = temp;
+                }
+            }
+        }
+
+        for (int i = 0; i < len - 1; i += 2) {
+            int temp = nums[i];
+            nums[i] = nums[i + 1];
+            nums[i + 1] = temp;
+        }
+
+        return nums;
+    }
+
     private static void mergeSort(int[] array, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
